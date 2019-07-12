@@ -161,15 +161,6 @@ The concepts dealt with are Person, Organization, Event, Place and Role"""@en ;
                                                                  rdfs:label "certainty"@en .
 
 
-###  http://postdata.linhd.uned.es/ontology/postdata-core#correspondsTo
-<http://postdata.linhd.uned.es/ontology/postdata-core#correspondsTo> rdf:type owl:ObjectProperty ;
-                                                                     rdfs:domain <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
-                                                                     rdfs:range <http://postdata.linhd.uned.es/ontology/postdata-core#Agent> ;
-                                                                     rdfs:comment "Person or Organisation who play the role"@en ;
-                                                                     rdfs:isDefinedBy "http://postdata.linhd.uned.es/ontology/POSTDATA-core/" ;
-                                                                     rdfs:label "correspondsTo"@en .
-
-
 ###  http://postdata.linhd.uned.es/ontology/postdata-core#creates
 <http://postdata.linhd.uned.es/ontology/postdata-core#creates> rdf:type owl:ObjectProperty ;
                                                                rdfs:domain <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> ;
@@ -1388,10 +1379,6 @@ owl:topDataProperty rdfs:domain <http://postdata.linhd.uned.es/ontology/postdata
 <http://postdata.linhd.uned.es/ontology/postdata-core#CreatorRole> rdf:type owl:Class ;
                                                                    rdfs:subClassOf <http://postdata.linhd.uned.es/ontology/postdata-core#Role> ,
                                                                                    [ rdf:type owl:Restriction ;
-                                                                                     owl:onProperty <http://postdata.linhd.uned.es/ontology/postdata-core#correspondsTo> ;
-                                                                                     owl:someValuesFrom <http://postdata.linhd.uned.es/ontology/postdata-core#Agent>
-                                                                                   ] ,
-                                                                                   [ rdf:type owl:Restriction ;
                                                                                      owl:onProperty <http://postdata.linhd.uned.es/ontology/postdata-core#creates> ;
                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
                                                                                                           owl:unionOf ( <http://postdata.linhd.uned.es/ontology/postdata-core#Ensemble>
@@ -1399,6 +1386,10 @@ owl:topDataProperty rdfs:domain <http://postdata.linhd.uned.es/ontology/postdata
                                                                                                                         <http://postdata.linhd.uned.es/ontology/postdata-core#Redaction>
                                                                                                                       )
                                                                                                         ]
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <http://postdata.linhd.uned.es/ontology/postdata-core#isPerformedBy> ;
+                                                                                     owl:someValuesFrom <http://postdata.linhd.uned.es/ontology/postdata-core#Agent>
                                                                                    ] ,
                                                                                    [ rdf:type owl:Restriction ;
                                                                                      owl:onProperty <http://postdata.linhd.uned.es/ontology/postdata-core#certainty> ;
